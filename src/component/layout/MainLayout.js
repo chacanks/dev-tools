@@ -21,18 +21,15 @@ class MainLayout extends Component {
     return (
       <div>
         <AppBar
-            title="Title"
+            title="Dev Tools"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
+            onLeftIconButtonTouchTap={this.handleToggle}
         />
-        <div>
-          s          
-        </div>
-        <RaisedButton
-          label="Toggle Drawer"
-          onClick={this.handleToggle}
-          style={{marginLeft:200}}
-        />
-        <Drawer open={this.state.open} containerStyle={{top:80}}>
+        <Drawer 
+        docked={false}
+        width={200}
+        open={this.state.open}
+        onRequestChange={(open) => this.setState({open})}>
           <MenuItem>Menu Item</MenuItem>
           <MenuItem>Menu Item 2</MenuItem>
         </Drawer>
